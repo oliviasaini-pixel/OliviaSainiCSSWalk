@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>An Evening Walk</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <section class="intro">
+        <h1>My Evening Walk</h1>
+        <span class="scroll">↓ begin the walk</span>
+    </section>
+    <div class="target-section">
+        <h2>First Stop: Target</h2>
+
+        <div class="grocery-list">
+            <p>To Buy List</p>
+            <p>- Half and Half</p>
+            <p>- Shredded Cheese</p>
+            <p>- Ranch</p>
+            <p>- Buldak</p>
+            <p>- Mascara</p>
+            <p>- Face Wash</p>
+            <p>- Hair Gel</p>
+        </div>
+        <img src="receipt.png" alt="reciept" class="receipt">
+        <img src="basket.png" alt="Shopping basket" class="basket">
+
+    </div>
+    <div class="dorm-section">
+
+        <div class="laundry" id="laundryTimer">
+            <span>Laundry Timer</span>
+
+            <strong id="timerDisplay">33:00</strong>
+
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+
+            <p id="timerMessage">CLICK TO START</p>
+        </div>
+
+
+        <div class="second-stop">
+
+            <h2>Second Stop: Dorm</h2>
+
+            <p>
+                I dropped off my groceries and made some buldak,
+                then I started my laundry and went for a walk
+                to pass the time.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="thirdstop-center"><h2>Third Stop: Park Stroll!</h2></div>
+    <div class="grid-container">
+        <a href="parkstroll1.html">Click to start!</a>
+        
+    </div>
+    
+<script>
+    const laundryTimer = document.getElementById("laundryTimer");
+    const timerDisplay = document.getElementById("timerDisplay");
+    const timerMessage = document.getElementById("timerMessage");
+    const loadingProgress = document.getElementById("loadingProgress");
+
+    let timeLeft = 33 * 60;
+    let timerRunning = false;
+    let timer;
+
+    laundryTimer.addEventListener("click", function() {
+
+        if (timerRunning) return;
+
+        timerRunning = true;
+        timerMessage.textContent = "LAUNDRY RUNNING...";
+
+        timer = setInterval(function() {
+
+            timeLeft--;
+
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            minutes = String(minutes).padStart(2, "0");
+            seconds = String(seconds).padStart(2, "0");
+
+            timerDisplay.textContent = minutes + ":" + seconds;
+
+            let progress = (timeLeft / (33 * 60)) * 100;
+            loadingProgress.style.width = progress + "%";
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                timerMessage.textContent = "LAUNDRY FINISHED!";
+                timerDisplay.textContent = "00:00";
+            }
+
+        }, 1000);
+    });
+</script>
+</body>

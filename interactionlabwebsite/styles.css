@@ -1,0 +1,556 @@
+/* ================================
+   GENERAL WEBSITE
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #d9d6e8;
+    color: #25233a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ================================
+   INTRO / HOME PAGE
+================================ */
+
+.intro {
+    height: 100vh;
+    min-height: 600px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    background: linear-gradient(
+        to bottom,
+        #070b2d 0%,
+        #15145a 55%,
+        #3d367c 80%,
+        #aaa7c8 100%
+    );
+}
+
+
+/* ================================
+   STARS
+================================ */
+
+.intro::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, #b9c9ff 2px, transparent 2px);
+
+    background-size:
+        100px 100px,
+        170px 170px,
+        250px 250px;
+
+    background-position:
+        20px 30px,
+        80px 100px,
+        150px 50px;
+
+    opacity: 0.65;
+
+    animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0.45;
+    }
+}
+
+
+/* ================================
+   INTRO TITLE
+================================ */
+
+.intro h1 {
+    position: relative;
+    z-index: 2;
+
+    margin: 0;
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(70px, 11vw, 150px);
+
+    font-weight: normal;
+    line-height: 0.9;
+
+    color: white;
+
+    text-shadow:
+        3px 3px 0px #6d6ac4,
+        0 0 15px rgba(255,255,255,0.5);
+}
+
+
+/* ================================
+   INTRO DESCRIPTION
+================================ */
+
+.intro p {
+    position: relative;
+    z-index: 2;
+
+    max-width: 500px;
+
+    margin-top: 35px;
+
+    padding: 12px 25px;
+
+    font-size: 16px;
+    line-height: 1.5;
+
+    color: #ffffff;
+
+    background: rgba(20, 20, 70, 0.45);
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    border-radius: 8px;
+
+    box-shadow:
+        inset 0 1px 5px rgba(255,255,255,0.3),
+        0 5px 15px rgba(0,0,0,0.25);
+}
+
+
+/* ================================
+   SCROLL TEXT
+================================ */
+
+.scroll {
+    position: absolute;
+    bottom: 35px;
+
+    z-index: 2;
+
+    padding: 10px 20px;
+
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    color: white;
+
+    background: rgba(0,0,0,0.25);
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    border-radius: 20px;
+}
+
+
+/* ================================
+   FIRST STOP — TARGET
+================================ */
+
+.target-section {
+    padding: 100px 12%;
+    background: #d9d6e8;
+    position: relative;
+}
+
+
+/* TARGET TITLE */
+
+.target-section h2 {
+    margin: 0 0 35px 8%;
+
+    font-size: 38px;
+
+    color: #443b87;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* ================================
+   GROCERY LIST
+================================ */
+
+.grocery-list {
+    width: 400px;
+
+    margin: 0 auto;
+
+    padding: 30px 40px;
+
+    background: #fffef2;
+
+    border: 2px solid #55536b;
+
+    border-radius: 4px;
+
+    box-shadow:
+        8px 8px 0px #9b98b2,
+        0 0 12px rgba(0,0,0,0.15);
+
+    transform: rotate(-1deg);
+}
+
+.grocery-list p {
+    margin: 0;
+
+    padding: 12px 0;
+
+    border-bottom: 1px dashed #8ca6c7;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 17px;
+
+    color: #292744;
+}
+
+.grocery-list p:first-child {
+    font-family: Arial, sans-serif;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #4a3f91;
+
+    border-bottom: 3px solid #4a3f91;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 5px;
+}
+
+
+/* ================================
+   DORM SECTION
+================================ */
+
+.dorm-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 60px;
+
+    width: 100%;
+
+    margin: 120px auto;
+
+    padding: 0 8%;
+}
+
+
+/* ================================
+   LAUNDRY TIMER
+================================ */
+
+.laundry {
+    width: 300px;
+
+    flex-shrink: 0;
+
+    padding: 25px;
+
+    background: #dedcf1;
+
+    border: 2px solid #69658d;
+
+    border-radius: 8px;
+
+    box-shadow:
+        8px 8px 0px #aaa7c1,
+        inset 0 0 8px rgba(255,255,255,0.8);
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.laundry:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        10px 10px 0px #aaa7c1,
+        inset 0 0 10px rgba(255,255,255,0.9);
+}
+
+.laundry span {
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #514b7b;
+}
+
+.laundry strong {
+    display: block;
+
+    margin: 12px 0;
+
+    font-size: 42px;
+
+    font-family: "Courier New", monospace;
+
+    color: #312d61;
+}
+
+
+/* LOADING BAR */
+
+.loading-bar {
+    height: 10px;
+
+    width: 100%;
+
+    background: #bcb9d0;
+
+    border: 1px solid #514a96;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+
+    width: 100%;
+
+    background: linear-gradient(
+        to right,
+        #6e64c9,
+        #b5a9ff
+    );
+
+    transition: width 1s linear;
+}
+
+.laundry p {
+    margin: 15px 0 0;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #514b7b;
+}
+
+
+/* ================================
+   SECOND STOP — DORM
+================================ */
+
+.second-stop {
+    width: 600px;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    padding: 35px;
+
+    background: #f2effa;
+
+    border: 2px solid #69658d;
+
+    border-radius: 12px;
+
+    box-shadow:
+        10px 10px 0px #aaa7c1,
+        inset 0 0 12px rgba(255,255,255,0.8);
+}
+
+
+/* DORM HEADING */
+
+.second-stop h2 {
+    margin-top: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 32px;
+
+    color: #443b87;
+
+    border-bottom: 2px dotted #777394;
+
+    padding-bottom: 12px;
+}
+
+
+/* DORM PARAGRAPH */
+
+.second-stop p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #333149;
+}
+
+a {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 15px 30px;
+
+    background: linear-gradient(
+        to bottom,
+        #8c82e8 0%,
+        #5549a7 50%,
+        #403681 100%
+    );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    border: 2px solid #332b72;
+
+    border-radius: 8px;
+
+    box-shadow:
+        inset 0 1px 4px rgba(255,255,255,0.7),
+        4px 4px 0px #9b98b2;
+
+    transition: 0.2s;
+}
+
+a:hover {
+    background: linear-gradient(
+        to bottom,
+        #aaa1ff,
+        #6256bd
+    );
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        inset 0 1px 4px rgba(255,255,255,0.8),
+        6px 6px 0px #8b87a5;
+}
+
+.grid-container {
+  display: grid;
+  place-items: center; /* Centers horizontally and vertically */
+  height: 15vh;
+}
+.thirdstop-center {
+    
+    font-size: 18px;
+    text-align: center;
+    color: #312d61;
+    line-height: 4.5;
+}
+
+
+/* ================================
+   SMALL SCREEN
+================================ */
+
+@media (max-width: 700px) {
+
+    .grocery-list {
+        width: 90%;
+    }
+
+    .dorm-section {
+        flex-direction: column;
+
+        gap: 40px;
+
+        padding: 0 5%;
+    }
+
+    .laundry {
+        width: 100%;
+
+        max-width: 400px;
+    }
+
+    .second-stop {
+        width: 100%;
+    }
+
+    .intro h1 {
+        font-size: 70px;
+    }
+}
+.grocery-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.receipt {
+    position: absolute;
+
+    width: 300px;
+    height: auto;
+
+    top: 250px;
+    left: calc(50% + 350px);
+    
+}
+
+.receipt:hover {
+    transform: scale(1.09);
+}
+.target-section {
+    position: relative;
+}
+
+.basket {
+    position: absolute;
+
+    width: 220px;
+    height: auto;
+
+    left: 12%;
+    top: 280px;
+}
+.basket:hover {
+    transform: scale(1.50);
+}
